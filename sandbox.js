@@ -4,9 +4,11 @@ var person = {};
 
 person.name = "Mrs. White";
 
-person.name;
+// assigning the name property of the person object to a variable named who.
 
-console.log(person.name);
+var who = person.name;
+
+console.log(who);
 
 // declaration and initialisation of object in one statement.
 
@@ -14,4 +16,4 @@ var person = {
     "name":"Mrs. White"
 };
 
-console.log(person.name);
+console.log(who);
