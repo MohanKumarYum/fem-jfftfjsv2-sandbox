@@ -10,10 +10,9 @@ var who = person.name;
 
 console.log(who);
 
-// declaration and initialisation of object in one statement.
+// re-assign a new value to name property of the person object.
 
-var person = {
-    "name":"Mrs. White"
-};
+person.name = "Mr. White";
 
+// the value of variable who, remains unchanged even after re-assigning the name property.
 console.log(who);
