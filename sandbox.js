@@ -21,4 +21,6 @@ console.log(person); //         [   name: 'Mrs. White',
                                 // digit: 'Zero property name',
                                 // '0digit': 'Zero property name' ]
 
-// console.log(person.0digit); // errors out - since the compiler cannot evaluate the property "0digit".
+console.log(person.'0digit'); // errors out - since the compiler cannot evaluate the property "0digit".
+
+console.log(person['0digit']); // Zero property name
