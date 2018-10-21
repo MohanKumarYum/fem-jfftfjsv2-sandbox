@@ -1,10 +1,11 @@
-// declare a person object and initialising it separately.
+// declare a person object and initializing it separately.
 
 var person = {};
 
 person.name = "Mrs. White";
 
-// assigning the name property of the person object to a variable named who.
+// Primitive types are pass by value. - String, number, boolean, true, false, Undefined & null
+// assigning the "name" property of the person object to a variable named who.
 
 var who = person.name;
 
@@ -16,3 +17,5 @@ person.name = "Mr. White";
 
 // the value of variable who, remains unchanged even after re-assigning the name property.
 console.log(who);
+
+// Non-primitive types are pass by reference - Object, array & functions.
