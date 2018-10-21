@@ -1,6 +1,6 @@
-// declare a person object and initializing it separately.
+// declare a person array and initializing it separately.
 
-var person = {};
+var person = [];
 
 person.name = "Mrs. White";
 
@@ -10,6 +10,7 @@ person.name = "Mrs. White";
 var who = person.name;
 
 console.log(who);
+console.log(person);
 
 // re-assign a new value to name property of the person object.
 
@@ -18,4 +19,4 @@ person.name = "Mr. White";
 // the value of variable who, remains unchanged even after re-assigning the name property.
 console.log(who);
 
-// Non-primitive types are pass by reference - Object, array & functions.
+// Non-primitive types are store/pass by reference - Object, array, functions, promise......
