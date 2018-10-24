@@ -157,6 +157,6 @@
 
 // Regular expression handling.
 
-const [a, b, c, d] = "one two three".match(/\w+/g);
+// const [a, b, c, d] = "one two three".match(/\w+/g);
 
-console.log(`a = ${a}, b = ${b}, c = ${c}, d = ${d}`);   // a = one, b = two, c = three, d = undefined [no value for d]
+// console.log(`a = ${a}, b = ${b}, c = ${c}, d = ${d}`);   // a = one, b = two, c = three, d = undefined [no value for d]
