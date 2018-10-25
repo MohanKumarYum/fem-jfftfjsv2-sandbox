@@ -33,9 +33,14 @@ game.suspects.push(
 // console.log(game.suspects.length);
 
 function loopGame(obj) {
-    for (i = 0; i < obj.suspects.length; i++) {
-        console.log(obj.suspects[i]);
-    }
+    // for (i = 0; i < obj.suspects.length; i++) {
+    //     console.log(obj.suspects[i]);
+    // }
+
+    // Loop for objects
+
+    for (let key in obj)
+        console.log(obj[key]);
 };
 
 loopGame(game);
