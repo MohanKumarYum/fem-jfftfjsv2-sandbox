@@ -6,19 +6,15 @@ game["suspects"] = [];
 
 // console.log(game); // { suspects: [] }
 
-game.suspects.push(
-    {
-        name: "Rusty",
-        color: "Orange",
-    }
-);
+game.suspects.push({
+    name: "Rusty",
+    color: "Orange"
+});
 
-game.suspects.push(
-    {
-        name: "Miss Scarlet",
-        color: "Red",
-    }
-);
+game.suspects.push({
+    name: "Miss Scarlet",
+    color: "Red"
+});
 
 // console.log(game); // Returns the entire object.
 // // {
@@ -39,13 +35,24 @@ function loopGame(obj) {
 
     // Loop for objects
 
-    for (let key in obj)
-        console.log(obj[key]);
-};
+    for (let key in obj) {
+        // console.log(key);
+        for (let prop in obj[key]) {
+            // console.log(obj[key][prop]);
+            for (const prop2 in obj[key][prop]) {
+                // console.log(obj[key][prop][prop2]);
+                if (obj[key][prop][prop2] === "Rusty") {
+                    console.log(`Found'em`);
+                } else {
+                    console.log("Next time");
+                }
+            }
+        }
+    }
+}
 
 loopGame(game);
 
 // 2
 // { name: 'Rusty', color: 'Orange' }
 // { name: 'Miss Scarlet', color: 'Red' }
-
