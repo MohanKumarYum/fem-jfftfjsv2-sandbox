@@ -1,0 +1,23 @@
+{
+  "name": "objects",
+  "version": "1.0.0",
+  "description": "",
+  "main": "sandbox.js",
+  "dependencies": {
+    "underscore": "^1.9.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MohanKumarYum/fem-jfftfjsv2-sandbox.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MohanKumarYum/fem-jfftfjsv2-sandbox/issues"
+  },
+  "homepage": "https://github.com/MohanKumarYum/fem-jfftfjsv2-sandbox#readme"
+}

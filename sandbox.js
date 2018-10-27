@@ -1,79 +1,73 @@
-// Nesting - List Transformation.
+// // _.each utility to iterate through a list.
+// var _ = require("underscore");
+// // const rooms = ["observatory", "ballroom", "library"];
+// // const rooms = {
+// //     firstlocation: "observatory",
+// //     secondlocation: "ballroom",
+// //     thirdlocation: "library"
+// // };
 
-const game = {};
+// let logger = function (val) {
+//     console.log(val);
+// };
 
-game["suspects"] = [];
+// // list through objects and print.
 
-// console.log(game); // { suspects: [] }
+// _.each(rooms, logger);
 
-game.suspects.push({
-    name: "Rusty",
-    color: "Orange"
-});
+// Result
 
-game.suspects.push({
-    name: "Miss Scarlet",
-    color: "Red"
-});
+// observatory
+// ballroom
+// library
 
-// console.log(game); // Returns the entire object.
-// // {
-//     //     suspects:
-//     //     [{ name: 'Rusty', color: 'Orange' },
-//     //                         { name: 'Miss Scarlet', color: 'Red' } ] }
+// Own declaration of _.each
 
-// console.log(game["suspects"]);  // Returns just the array of the suspects key
-// [ { name: 'Rusty', color: 'Orange' },
-//   { name: 'Miss Scarlet', color: 'Red' } ]
+var _ = {};
 
-// console.log(game.suspects.length);
+// const rooms = ["observatory", "ballroom", "library"];
+const rooms = {"firstlocation":"observatory", "secondlocation":"ballroom", "thirdlocation":"library"};
 
-// function loopGame(obj) {
-//     // for (i = 0; i < obj.suspects.length; i++) {
-//     //     console.log(obj.suspects[i]);
-//     // }
+_.each = function (list, callback) {
 
-//     // Loop for objects
+    if (typeof callback !== "function") {
+        return console.error(`${callback} is not a function.`);   }
 
-//     for (let key in obj) {
-//         // console.log(key);
-//         for (let prop in obj[key]) {
-//             // console.log(obj[key][prop]);
-//             for (const prop2 in obj[key][prop]) {
-//                 // console.log(obj[key][prop][prop2]);
-//                 if (obj[key][prop][prop2] === "Rusty") {
-//                     console.log(`Found'em`);
-//                 } else {
-//                     console.log("Next time");
-//                 }
-//             }
-//         }
+    if (Array.isArray(list)) {
+        for (let index = 0; index < list.length; index++) {
+            callback(list[index], index, list);
+        }
+    }
+    else {
+        for (const key in list) {
+            callback(list[key], key, list);
+        }
+    }
+}
+
+function fnCallback(val, index, list) {
+    console.log(val, index, list);
+    if (list[index + 1]) {
+        console.log(`${val} is younger than ${list[index + 1]}.`);
+    }
+    else {
+        console.log(`${val} is oldest.`);
+    }
+
+};
+
+// list through objects and print.
+
+_.each(rooms, fnCallback);
+
+// Another way to call as an anonymous function.
+
+// _.each(rooms, function fnCallback(val, index, list) {
+//     if (list[index + 1]) {
+//         console.log(`${val} is younger than ${list[index + 1]}.`);
 //     }
-// }
+//     else {
+//         console.log(`${val} is oldest.`);
+//     }
 
-// loopGame(game);
-
-// 2
-// { name: 'Rusty', color: 'Orange' }
-// { name: 'Miss Scarlet', color: 'Red' }
-
-// nested for-in loops output
-
-// Found'em
-// Next time
-// Next time
-// Next time
-
-
-const firstColor = game["suspects"][0].color;
-const secondColor = game["suspects"][1].color;
-console.log(firstColor, secondColor); // Orange Red
-
-const [color1, color2] = [game.suspects[0].color, game.suspects[1].color];
-console.log(color1, color2); // Orange Red
-
-const [{color: clr1}, {color: clr2} ]= game.suspects;
-console.log(clr1, clr2); // Orange Red
-
-const [firstObj,secondObj]= game.suspects;
-console.log(firstObj, secondObj); // { name: 'Rusty', color: 'Orange' } { name: 'Miss Scarlet', color: 'Red' }
+// });
